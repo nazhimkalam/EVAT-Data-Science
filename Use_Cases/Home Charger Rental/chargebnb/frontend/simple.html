@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Simple React Test</title>
+  <script crossorigin src="https://unpkg.com/react@18/umd/react.development.js"></script>
+  <script crossorigin src="https://unpkg.com/react-dom@18/umd/react-dom.development.js"></script>
+</head>
+<body>
+  <div id="root"></div>
+  <script>
+    const { createElement } = React;
+    const { render } = ReactDOM;
+    
+    function App() {
+      return createElement('div', null, 
+        createElement('h1', null, 'Simple Test App'),
+        createElement('p', null, 'This should render')
+      );
+    }
+    
+    render(createElement(App), document.getElementById('root'));
+  </script>
+</body>
+</html>
