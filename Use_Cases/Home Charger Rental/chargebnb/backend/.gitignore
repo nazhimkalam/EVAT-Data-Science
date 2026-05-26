@@ -1,0 +1,46 @@
+# Python
+__pycache__/
+*.py[cod]
+*$py.class
+*.so
+.Python
+env/
+venv/
+ENV/
+.venv
+
+# IDE
+.vscode/
+.idea/
+*.swp
+*.swo
+*~
+.DS_Store
+
+# Models and Data
+*.pkl
+*.pickle
+*.joblib
+*.h5
+*.pt
+*.pth
+
+# Large data files
+data/raw/*.csv
+data/processed/*.npz
+*.db
+
+# Logs and reports
+*.log
+*.txt
+.pytest_cache/
+htmlcov/
+
+# Backups
+*.backup
+*.bak
+*_backup*
+
+# OS
+.DS_Store
+Thumbs.db

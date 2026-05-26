@@ -1,14 +1,23 @@
-const API_BASE = import.meta.env.VITE_API_BASE || 'http://127.0.0.1:8000';
+const API_BASE = import.meta.env.VITE_API_BASE || 'http://127.0.0.1:8001';
 
 async function fetchJson(url, options = {}) {
-  const response = await fetch(url, options);
-  const data = await response.json();
+  try {
+    const response = await fetch(url, options);
+    const data = await response.json();
 
-  if (!response.ok) {
-    throw new Error(data.detail || data.message || 'API request failed');
+    if (!response.ok) {
+      console.error(`API Error [${response.status}]:`, data);
+      throw new Error(data.detail || data.message || `API request failed (${response.status})`);
+    }
+
+    return data;
+  } catch (error) {
+    if (error instanceof SyntaxError) {
+      console.error('Failed to parse API response as JSON:', error);
+      throw new Error('Invalid API response. The server may be down.');
+    }
+    throw error;
   }
-
-  return data;
 }
 
 export async function fetchListings(start, end) {

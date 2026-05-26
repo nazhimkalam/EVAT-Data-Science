@@ -1,0 +1,146 @@
+╔═══════════════════════════════════════════════════════════════════════════╗
+║                    CHARGEBNB QUICK START GUIDE                             ║
+╚═══════════════════════════════════════════════════════════════════════════╝
+
+📍 PROJECT LOCATION
+/Users/nazhimkalam/Desktop/EVAT/EVAT-Data-Science/Use_Cases/Home Charger Rental/chargebnb
+
+═══════════════════════════════════════════════════════════════════════════
+
+🚀 START BOTH SERVERS WITH ONE COMMAND
+
+macOS / Linux (Full-Featured - RECOMMENDED):
+    cd chargebnb
+    ./start.sh
+
+macOS / Linux (Simple):
+    cd chargebnb
+    ./start_simple.sh
+
+Windows:
+    cd chargebnb
+    start.bat
+
+═══════════════════════════════════════════════════════════════════════════
+
+📱 ACCESS THE APPLICATION
+
+Frontend (React):    http://localhost:5173
+Backend API:         http://localhost:8001
+API Documentation:   http://localhost:8001/docs
+
+═══════════════════════════════════════════════════════════════════════════
+
+⚙️ WHAT GETS STARTED
+
+✓ Backend Server (FastAPI)
+  - Port: 8001
+  - File: backend/main.py
+  - Language: Python
+
+✓ Frontend Server (React/Vite)
+  - Port: 5173
+  - File: frontend/package.json
+  - Language: JavaScript/React
+
+═══════════════════════════════════════════════════════════════════════════
+
+🛑 STOP THE SERVERS
+
+macOS/Linux:
+    Press Ctrl+C in the terminal
+
+Windows:
+    Close the command windows
+
+═══════════════════════════════════════════════════════════════════════════
+
+⚡ MANUAL STARTUP (If Scripts Don't Work)
+
+Terminal 1 - Backend:
+    cd backend
+    python main.py
+
+Terminal 2 - Frontend:
+    cd frontend
+    npm run dev
+
+═══════════════════════════════════════════════════════════════════════════
+
+✅ PREREQUISITES
+
+Before running scripts, ensure you have:
+    • Python 3.8+ installed
+    • Node.js 14+ installed
+    • Backend dependencies: pip install -r requirements.txt
+    • Frontend dependencies: npm install
+
+═══════════════════════════════════════════════════════════════════════════
+
+📚 DOCUMENTATION
+
+See STARTUP_GUIDE.md for detailed information:
+    • Complete setup instructions
+    • Troubleshooting guide
+    • Environment variables
+    • Development workflow
+    • Alternative startup methods
+
+═══════════════════════════════════════════════════════════════════════════
+
+🐛 TROUBLESHOOTING
+
+Port 8001 already in use?
+    macOS/Linux: lsof -i :8001 | grep LISTEN | awk '{print $2}' | xargs kill -9
+    Windows: netstat -aon | find ":8001"
+
+Port 5173 already in use?
+    macOS/Linux: lsof -i :5173 | grep LISTEN | awk '{print $2}' | xargs kill -9
+    Windows: netstat -aon | find ":5173"
+
+Backend won't start?
+    1. Check: python --version (should be 3.8+)
+    2. Install: pip install -r backend/requirements.txt
+    3. Check logs: tail -f /tmp/chargebnb_backend.log
+
+Frontend won't start?
+    1. Check: node --version (should be 14+)
+    2. Check: npm --version
+    3. Install: npm install (in frontend directory)
+    4. Check logs: tail -f /tmp/chargebnb_frontend.log
+
+═══════════════════════════════════════════════════════════════════════════
+
+✨ SCRIPTS AVAILABLE
+
+start.sh                Full-featured startup (macOS/Linux)
+                       • Colored output
+                       • Process monitoring
+                       • Graceful shutdown
+                       • Log files
+                       • Recommended ⭐
+
+start_simple.sh        Simple lightweight startup (macOS/Linux)
+                       • Minimal output
+                       • Quick launch
+                       • Good for quick testing
+
+start.bat             Windows startup
+                      • Opens two separate windows
+                      • Easy to monitor both servers
+                      • Double-click to run
+
+═══════════════════════════════════════════════════════════════════════════
+
+💡 TIPS
+
+• Hot Reload: Frontend changes are auto-reloaded. Just refresh your browser.
+• Backend Changes: Require server restart. Stop and run ./start.sh again.
+• API Documentation: Visit http://localhost:8001/docs for interactive API docs.
+• Database: SQLite file (chargebnb.db) stored in backend directory.
+• Development Mode: HMR enabled for fast development feedback.
+
+═══════════════════════════════════════════════════════════════════════════
+
+Last Updated: May 23, 2026
+For more details, see STARTUP_GUIDE.md or README.md
